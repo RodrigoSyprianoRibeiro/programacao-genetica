@@ -30,7 +30,7 @@
                 <div class="col-sm-12 overflow">
                    <div class="social-icons pull-right">
                         <ul class="nav nav-pills">
-                            <li><a href="https://github.com/RodrigoSyprianoRibeiro/programacao_genetica" target="_blank"><i class="fa fa-github"></i></a></li>
+                            <li><a href="https://github.com/RodrigoSyprianoRibeiro/programacao-genetica" target="_blank"><i class="fa fa-github"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                         <div class="tab-pane fade" id="tab1-item2">
                             <div class="col-sm-12 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
                                 <h2 class="page-header">Código <strong>Fonte</strong></h2>
-                                <a href="https://github.com/RodrigoSyprianoRibeiro/programacao_genetica" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                                <a href="https://github.com/RodrigoSyprianoRibeiro/programacao-genetica" target="_blank"><i class="fa fa-github"></i> GitHub</a>
                                 <div class="col-md-12">
                                     <ul id="tab2" class="nav nav-tabs">
                                         <li class="active"><a href="#tab2-item1" data-toggle="tab">HTML</a></li>
