@@ -1,0 +1,74 @@
+$(function () {
+
+  // Ação do botão "Buscar solução" 
+  $(document).on('click', '#buscar', function(e){
+    e.preventDefault();
+    buscarSolucao();
+  });
+
+  function buscarSolucao() {
+    var dados = $('#parametros').serialize();
+    $.ajax({
+      dataType: "json",
+      type: 'POST',
+      url: 'library/executar.php',
+      async: true,
+      data: dados,
+      success: function(response) {
+        $("#resultado").html("&lt;h2&gt;&lt;b&gt;Melhor Função: &lt;/b&gt;" + response.funcao + "&lt;/h2&gt;" +
+                             "&lt;h2&gt;&lt;b&gt;Aptidão: &lt;/b&gt;" + response.aptidao + "&lt;/h2&gt;");
+      },
+      error: function() {
+        $("#resultado").html("&lt;h2&gt;Erro ao &lt;b&gt;Buscar solução&lt;/b&gt;. Tente novamente.&lt;/h2&gt;");
+      },
+      beforeSend: function(){
+        $("#resultado").html("&lt;img src='images/carregando.gif' alt='Carregando' /&gt;");
+        $("#buscar").addClass("disabled");
+      },
+      complete: function(){
+        $("#buscar").removeClass("disabled");
+      }
+    });
+  };
+
+  $("#populacao_inicial").ionRangeSlider({
+    min: 0,
+    max: 100,
+    from: 50,
+    type: 'single',
+    step: 5,
+    postfix: " indivíduos",
+    prettify: false,
+    hasGrid: true
+  });
+
+  $("#quantidade_geracoes").ionRangeSlider({
+    min: 0,
+    max: 200,
+    from: 50,
+    type: 'single',
+    step: 10,
+    postfix: " gerações",
+    prettify: false,
+    hasGrid: true
+  });
+
+  $("#altura_maxima_arvore").ionRangeSlider({
+    min: 0,
+    max: 10,
+    from: 3,
+    type: 'single',
+    step: 1,
+    hasGrid: true
+  });
+
+  $(".percentagem").ionRangeSlider({
+    min: 0,
+    max: 100,
+    type: 'single',
+    step: 1,
+    postfix: "%",
+    prettify: false,
+    hasGrid: true
+  });
+});
