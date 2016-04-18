@@ -27,6 +27,7 @@ class Log {
         $texto .= "Quantidade da população que vai sofrer Mutação: ".$dados['quantidade_mutacao']."%\n\n";
         foreach ($aptidaoPopulacao AS $geracao => $dados) {
             $texto .= "Geração {$geracao}: \n";
+            $texto .= "Tamanho População: ".$dados['tamanhoPopulacao']."\n";
             $texto .= "Média Aptidão: ".$dados['mediaAptidao']."\n";
             $texto .= "Melhor Função: ".$dados['melhorFuncao'].". ";
             $texto .= "Melhor Aptidão: ".$dados['melhorAptidao']."\n\n";

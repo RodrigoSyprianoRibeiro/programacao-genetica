@@ -42,15 +42,10 @@ class AlgoritmosGeneticos {
     }
 
     public function gerarNovaPopulacao() {
-
         $this->calcularAptidaoPopulacao();
-
         $this->geracaoAtual++;
-
         $this->selecaoEletista();
-
         $this->crossover();
-
         $this->mutacao();
     }
 
@@ -147,7 +142,8 @@ class AlgoritmosGeneticos {
             $somaAptidao += $arvore->aptidao;
         }
         $melhorIndividuo = $this->getMelhorIndividuo();
-        $dados = array('mediaAptidao' => ($somaAptidao / $tamanhoPopulacao),
+        $dados = array('tamanhoPopulacao' => $tamanhoPopulacao,
+                       'mediaAptidao' => ($somaAptidao / $tamanhoPopulacao),
                        'melhorFuncao' => $melhorIndividuo->funcao,
                        'melhorAptidao' => $melhorIndividuo->aptidao);
         $this->aptidaoPopulacao[$this->geracaoAtual] = $dados;

@@ -16,7 +16,7 @@ class Util
     }
 
     public static function getConstanteAleatorio() {
-        $conjunto = self::gerarNumeroAleatorio(5);
+        $conjunto = self::gerarNumeroAleatorio(3);
         $conjunto[] = 'x';
         return $conjunto[array_rand($conjunto)];
     }
