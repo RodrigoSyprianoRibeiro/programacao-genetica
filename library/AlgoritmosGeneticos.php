@@ -143,7 +143,7 @@ class AlgoritmosGeneticos {
         }
         $melhorIndividuo = $this->getMelhorIndividuo();
         $dados = array('tamanhoPopulacao' => $tamanhoPopulacao,
-                       'mediaAptidao' => ($somaAptidao / $tamanhoPopulacao),
+                       'mediaAptidao' => round(($somaAptidao / $tamanhoPopulacao), 2),
                        'melhorFuncao' => $melhorIndividuo->funcao,
                        'melhorAptidao' => $melhorIndividuo->aptidao);
         $this->aptidaoPopulacao[$this->geracaoAtual] = $dados;
