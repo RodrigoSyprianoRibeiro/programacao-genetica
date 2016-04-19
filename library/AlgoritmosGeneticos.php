@@ -56,6 +56,7 @@ class AlgoritmosGeneticos {
         for ($i = 0; $i < $totalPopulacao; $i++) {
             array_push($populacaoEletista, $this->populacao[$i]);
         }
+        unset($this->populacao);
         $this->populacao = $populacaoEletista;
         unset($populacaoEletista);
     }

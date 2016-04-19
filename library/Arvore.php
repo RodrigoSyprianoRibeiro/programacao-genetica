@@ -12,6 +12,7 @@ class Arvore
     public $aptidao;
 
     public $listaNodes;
+    public $nodeAleatorio;
     public $efetuadaTroca;
 
     function __construct($geracao, $alturaMaxima) {
@@ -24,6 +25,7 @@ class Arvore
         $this->aptidao = 0;
 
         $this->listaNodes = null;
+        $this->nodeAleatorio = null;
     }
 
     public function montarArvore() {
@@ -96,7 +98,9 @@ class Arvore
     public function getNodeAleatorio() {
         $this->ordemSimetrica($this->raiz);
         shuffle($this->listaNodes);
-        return $this->listaNodes[0];
+        $this->nodeAleatorio = $this->listaNodes[0];
+        unset($this->listaNodes);
+        return $this->nodeAleatorio;
     }
 
     public function ordemSimetrica($node) {
@@ -119,7 +123,7 @@ class Arvore
         if ($node == null) {
             return;
         }
-        if ($node === $this->listaNodes[0] && $this->efetuadaTroca === false) {
+        if ($node === $this->nodeAleatorio && $this->efetuadaTroca === false) {
             $node = clone $novoNode;
             $this->efetuadaTroca = true;
         }
