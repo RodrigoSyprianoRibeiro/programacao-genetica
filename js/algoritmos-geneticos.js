@@ -23,11 +23,15 @@ $(function () {
         $("#resultado").html("<h2>Erro ao <b>Buscar solução</b>. Tente novamente.</h2>");
       },
       beforeSend: function(){
-        $("#resultado").html("<img src='images/carregando.gif' alt='Carregando' />");
         $("#buscar").addClass("disabled");
+        $("#tempo").removeClass("hide");
+        cronometro();
+        intervalId = setInterval(cronometro, 1000);
+        $("#resultado").html("<img src='images/carregando.gif' alt='Carregando' />");
       },
       complete: function(){
         $("#buscar").removeClass("disabled");
+        clearInterval(intervalId);
       }
     });
   };
@@ -72,6 +76,23 @@ $(function () {
     prettify: false,
     hasGrid: true
   });
+
+  var hora = 0;
+  var minuto = 0;
+  var segundo = 0;
+
+  function cronometro() {
+    $('#cronometro').html(("0"+hora).slice(-2)+':'+("0"+minuto).slice(-2)+':'+("0"+segundo).slice(-2));
+    segundo++;
+    if (segundo === 60) {
+      minuto++
+      segundo = 0;
+    }
+    if (minuto === 60) {
+      hora++
+      minuto = 0;
+    }
+  }
 
   carregaLog();
 

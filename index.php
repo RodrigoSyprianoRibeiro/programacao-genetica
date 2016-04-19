@@ -91,6 +91,9 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-8 wow fadeIn text-center padding" data-wow-duration="500ms" data-wow-delay="300ms">
+                                    <div id="tempo" class="hide">
+                                        <h2>Tempo de execução: <b id="cronometro"></b>.</h2>
+                                    </div>
                                     <div id="resultado">
                                         <h2>Selecione os parâmetros desejados e clique no botão <b>Buscar solução</b>.</h2>
                                     </div>

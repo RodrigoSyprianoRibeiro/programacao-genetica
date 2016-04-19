@@ -22,11 +22,15 @@ $(function () {
         $("#resultado").html("&lt;h2&gt;Erro ao &lt;b&gt;Buscar solução&lt;/b&gt;. Tente novamente.&lt;/h2&gt;");
       },
       beforeSend: function(){
-        $("#resultado").html("&lt;img src='images/carregando.gif' alt='Carregando' /&gt;");
         $("#buscar").addClass("disabled");
+        $("#tempo").removeClass("hide");
+        cronometro();
+        intervalId = setInterval(cronometro, 1000);
+        $("#resultado").html("&lt;img src='images/carregando.gif' alt='Carregando' /&gt;");
       },
       complete: function(){
         $("#buscar").removeClass("disabled");
+        clearInterval(intervalId);
       }
     });
   };
@@ -44,10 +48,10 @@ $(function () {
 
   $("#quantidade_geracoes").ionRangeSlider({
     min: 0,
-    max: 200,
+    max: 100,
     from: 50,
     type: 'single',
-    step: 10,
+    step: 5,
     postfix: " gerações",
     prettify: false,
     hasGrid: true
@@ -71,4 +75,21 @@ $(function () {
     prettify: false,
     hasGrid: true
   });
+
+  var hora = 0;
+  var minuto = 0;
+  var segundo = 0;
+
+  function cronometro() {
+    $('#cronometro').html(("0"+hora).slice(-2)+':'+("0"+minuto).slice(-2)+':'+("0"+segundo).slice(-2));
+    segundo++;
+    if (segundo === 60) {
+      minuto++
+      segundo = 0;
+    }
+    if (minuto === 60) {
+      hora++
+      minuto = 0;
+    }
+  }
 });

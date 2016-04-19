@@ -39,14 +39,15 @@ class AlgoritmosGeneticos {
             $arvore->calcularAptidao();
             array_push($this->populacao, $arvore);
         }
+        $this->calcularAptidaoPopulacao();
     }
 
     public function gerarNovaPopulacao() {
-        $this->calcularAptidaoPopulacao();
         $this->geracaoAtual++;
         $this->selecaoEletista();
         $this->crossover();
         $this->mutacao();
+        $this->calcularAptidaoPopulacao();
     }
 
     public function selecaoEletista() {

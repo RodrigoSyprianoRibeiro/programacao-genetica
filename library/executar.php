@@ -9,7 +9,7 @@ if ($_POST) {
     $algoritimoGenetico->gerarPopulacaoInicial();
 
     $geracoes = $algoritimoGenetico->quantidadeGeracoes;
-    while ($geracoes > 0 && count($algoritimoGenetico->populacao) > 0) {
+    while ($geracoes > 1 && count($algoritimoGenetico->populacao) > 0) {
         $algoritimoGenetico->gerarNovaPopulacao();
         $geracoes--;
     }

@@ -28,6 +28,9 @@
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div&gt;
+        &lt;div id="tempo" class="hide"&gt;
+            &lt;h2&gt;Tempo de execução: &lt;b id="cronometro"&gt;&lt;/b&gt;.&lt;/h2&gt;
+        &lt;/div&gt;
         &lt;div id="resultado"&gt;
             &lt;h2&gt;Selecione os parâmetros desejados e clique no botão &lt;b&gt;Buscar solução&lt;/b&gt;.&lt;/h2&gt;
         &lt;/div&gt;
