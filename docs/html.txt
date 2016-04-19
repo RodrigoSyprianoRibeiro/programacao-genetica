@@ -16,7 +16,7 @@
     &lt;div&gt;
         &lt;div&gt;
             &lt;div&gt;% Seleção para próxima geração&lt;/div&gt;
-            &lt;input type="text" id="quantidade_selecao" name="quantidade_selecao" class="percentagem" data-from="50" value="" /&gt;
+            &lt;input type="text" id="quantidade_selecao" name="quantidade_selecao" class="percentagem" data-from="80" value="" /&gt;
         &lt;/div&gt;
         &lt;div&gt;
             &lt;div&gt;% População para crossover&lt;/div&gt;

@@ -42,7 +42,7 @@ $(function () {
   $("#populacao_inicial").ionRangeSlider({
     min: 0,
     max: 100,
-    from: 50,
+    from: 20,
     type: 'single',
     step: 5,
     postfix: " indivíduos",
@@ -53,7 +53,7 @@ $(function () {
   $("#quantidade_geracoes").ionRangeSlider({
     min: 0,
     max: 100,
-    from: 50,
+    from: 20,
     type: 'single',
     step: 5,
     postfix: " gerações",

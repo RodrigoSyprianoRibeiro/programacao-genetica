@@ -79,7 +79,7 @@
                                 <div class="col-sm-12 wow fadeIn text-center" data-wow-duration="500ms" data-wow-delay="300ms">
                                     <div class="form-group col-sm-4">
                                         <div class="knob-label">% Seleção para próxima geração</div>
-                                        <input type="text" id="quantidade_selecao" name="quantidade_selecao" class="percentagem" data-from="50" value="" />
+                                        <input type="text" id="quantidade_selecao" name="quantidade_selecao" class="percentagem" data-from="80" value="" />
                                     </div>
                                     <div class="form-group col-sm-4">
                                         <div class="knob-label">% População para crossover</div>
