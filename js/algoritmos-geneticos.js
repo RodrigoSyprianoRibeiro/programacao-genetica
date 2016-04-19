@@ -45,10 +45,10 @@ $(function () {
 
   $("#quantidade_geracoes").ionRangeSlider({
     min: 0,
-    max: 200,
+    max: 100,
     from: 50,
     type: 'single',
-    step: 10,
+    step: 5,
     postfix: " gerações",
     prettify: false,
     hasGrid: true
