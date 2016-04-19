@@ -25,6 +25,9 @@ $(function () {
       beforeSend: function(){
         $("#buscar").addClass("disabled");
         $("#tempo").removeClass("hide");
+        hora = 0;
+        minuto = 0;
+        segundo = 0;
         cronometro();
         intervalId = setInterval(cronometro, 1000);
         $("#resultado").html("<img src='images/carregando.gif' alt='Carregando' />");
