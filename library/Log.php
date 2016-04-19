@@ -29,7 +29,7 @@ class Log {
             $texto .= "Geração {$geracao}: \n";
             $texto .= "Tamanho População: ".$dados['tamanhoPopulacao']."\n";
             $texto .= "Média Aptidão: ".$dados['mediaAptidao']."\n";
-            $texto .= "Melhor Função: ".$dados['melhorFuncao'].". ";
+            $texto .= "Melhor Função: ".$dados['melhorFuncao']." ";
             $texto .= "Melhor Aptidão: ".$dados['melhorAptidao']."\n\n";
         }
         fwrite($log, $texto);
@@ -46,7 +46,7 @@ class Log {
         $texto .= "Quantidade selecionada para a nova população: ".$dados['quantidade_selecao']."%\n";
         $texto .= "Quantidade da população que vai fazer Crossover: ".$dados['quantidade_crossover']."%\n";
         $texto .= "Quantidade da população que vai sofrer Mutação: ".$dados['quantidade_mutacao']."%\n";
-        $texto .= "Melhor Função: ".$melhorIndividuo->funcao.". ";
+        $texto .= "Melhor Função: ".$melhorIndividuo->funcao." ";
         $texto .= "Aptidão: ".$melhorIndividuo->aptidao."\n\n";
         fwrite($log, $texto);
         fclose($log);

@@ -131,19 +131,27 @@ class AlgoritmosGeneticos {
     }
 
     public function getMelhorIndividuo() {
-        $this->ordenarPopulacaoMelhorPior();
-        return $this->populacao[0];
+        if (count($this->populacao) > 0) {
+            $this->ordenarPopulacaoMelhorPior();
+            return $this->populacao[0];
+        }
+        return (object) array('funcao' => 'Não existe pois a população foi extinta.', 'aptidao' => 'Não existe.');
     }
 
     public function calcularAptidaoPopulacao() {
         $tamanhoPopulacao = count($this->populacao);
-        $somaAptidao = 0;
-        foreach ($this->populacao AS $arvore) {
-            $somaAptidao += $arvore->aptidao;
+        if ($tamanhoPopulacao > 0) {
+            $somaAptidao = 0;
+            foreach ($this->populacao AS $arvore) {
+                $somaAptidao += $arvore->aptidao;
+            }
+            $mediaAptidao = round(($somaAptidao / $tamanhoPopulacao), 2);
+        } else {
+            $mediaAptidao = 0;
         }
         $melhorIndividuo = $this->getMelhorIndividuo();
         $dados = array('tamanhoPopulacao' => $tamanhoPopulacao,
-                       'mediaAptidao' => round(($somaAptidao / $tamanhoPopulacao), 2),
+                       'mediaAptidao' => $mediaAptidao,
                        'melhorFuncao' => $melhorIndividuo->funcao,
                        'melhorAptidao' => $melhorIndividuo->aptidao);
         $this->aptidaoPopulacao[$this->geracaoAtual] = $dados;
